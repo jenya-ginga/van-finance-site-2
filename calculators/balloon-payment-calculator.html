@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCP / Balloon Payment Calculator for Vans | My VanFinance</title>
+<meta name="description" content="Estimate lower monthly payments with a PCP-style balloon (Guaranteed Future Value) payment for van finance.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">VF</span><span>My VanFinance<small>UK Van Finance Hub</small></span></a>
+    <nav class="main-nav">
+      <a href="../lenders/index.html">Lenders Hub</a>
+      <a href="index.html">Calculators</a>
+      <a href="../tools/index.html">Vehicle &amp; Licence Checks</a>
+      <a href="../compare/index.html">Compare</a>
+      <a href="../news/index.html">News</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="../compare/index.html" class="btn btn-light btn-sm">Compare lenders</a>
+      <a href="index.html" class="btn btn-primary btn-sm">All calculators</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Calculators</a> <span>/</span> <span>PCP / Balloon Calculator</span></div>
+    <div class="eyebrow">Calculator</div>
+    <h1>PCP / balloon payment calculator</h1>
+    <p class="lede">Defer part of the van's value to the end of the agreement (the balloon, or Guaranteed Future Value) to lower your monthly payments.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="calc-shell">
+      <form class="calc-form" id="balloon-calc-form">
+        <div class="field">
+          <label for="bal-price">Van price</label>
+          <div class="input-prefix-wrap"><span class="prefix">£</span><input class="input" type="number" id="bal-price" value="22000" min="0" step="100"></div>
+        </div>
+        <div class="field">
+          <label for="bal-deposit">Deposit</label>
+          <div class="input-prefix-wrap"><span class="prefix">£</span><input class="input" type="number" id="bal-deposit" value="2200" min="0" step="50"></div>
+        </div>
+        <div class="field">
+          <label for="bal-term">Term: <b id="bal-term-out">36 months</b></label>
+          <input type="range" id="bal-term" min="12" max="60" step="6" value="36">
+          <div class="range-row"><span>12 mo</span><span>60 mo</span></div>
+        </div>
+        <div class="field">
+          <label for="bal-apr">Representative APR</label>
+          <input class="input" type="number" id="bal-apr" value="9.9" min="0" max="40" step="0.1">
+        </div>
+        <div class="field">
+          <label for="bal-gfv">Balloon / GFV as % of van price: <b id="bal-gfv-out">35% GFV</b></label>
+          <input type="range" id="bal-gfv" min="10" max="55" step="1" value="35">
+          <div class="range-row"><span>10%</span><span>55%</span></div>
+        </div>
+      </form>
+      <div class="calc-result">
+        <span style="color:rgba(255,255,255,.65);font-size:.85rem;">Estimated monthly payment</span>
+        <div class="big-number" id="bal-monthly">£312</div>
+        <div class="result-line"><span>Final balloon payment</span><span id="bal-balloon">£7,700</span></div>
+        <div class="result-line"><span>Total paid over term</span><span id="bal-total">£21,132</span></div>
+        <div class="result-line"><span>Total interest</span><span id="bal-interest">£1,332</span></div>
+        <a href="van-finance-calculator.html" class="btn btn-light btn-block mt-24">Compare with a standard HP quote</a>
+      </div>
+    </div>
+
+    <div class="disclaimer mt-32">
+      Illustrative estimate only. In a real PCP/balloon agreement, the balloon (Guaranteed Future Value) is normally set by the finance company based on predicted future value and mileage limits, not simply a fixed percentage of price — treat this as a directional estimate, not a lender quote.
+    </div>
+
+    <div class="grid grid-2 mt-48">
+      <div>
+        <h3>Balloon finance: your three options at the end</h3>
+        <p>When the term ends you can typically: pay the balloon and keep the van, hand it back and walk away (subject to condition/mileage), or part-exchange it into a new agreement. This flexibility is why balloon finance suits businesses that like to refresh their fleet regularly.</p>
+      </div>
+      <div>
+        <h3>Watch mileage and condition limits</h3>
+        <p>Balloon agreements usually cap annual mileage and expect fair wear and tear only — excess mileage or damage charges can apply if you hand the van back. For vans doing high daily mileage, a standard HP agreement is often simpler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../js/main.js"></script>
+<script>
+document.write(`
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="../index.html" class="brand" style="margin-bottom:14px;"><span class="brand-mark">VF</span><span>My VanFinance</span></a>
+        <p style="font-size:.85rem;">Independent UK van finance comparison, calculators and vehicle-check tools.</p></div>
+      <div><h4>Lenders</h4><ul><li><a href="../lenders/index.html">Lenders Hub</a></li><li><a href="../lenders/moneybarn.html">Moneybarn</a></li><li><a href="../lenders/zuto.html">Zuto</a></li></ul></div>
+      <div><h4>Tools</h4><ul><li><a href="index.html">Calculators</a></li><li><a href="../tools/vin-check.html">VIN Check</a></li><li><a href="../compare/index.html">Compare</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="../about.html">About Us</a></li><li><a href="../news/index.html">News</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="../about.html#disclaimer">Disclaimer</a></li><li><a href="../about.html#privacy">Privacy</a></li></ul></div>
+    </div>
+    <p class="footer-legal">My VanFinance is an independent comparison and information website. My VanFinance is not a lender. Calculator outputs are illustrative estimates only.</p>
+    <div class="footer-bottom"><span>© <span data-year></span> My VanFinance. All rights reserved.</span><span>my-vanfinance.co.uk</span></div>
+  </div>
+</footer>
+`);
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Settlement Calculator for Van Finance | My VanFinance</title>
+<meta name="description" content="Estimate the approximate payoff figure to settle your van finance agreement early, part-way through your term.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-mark">VF</span><span>My VanFinance<small>UK Van Finance Hub</small></span></a>
+    <nav class="main-nav">
+      <a href="../lenders/index.html">Lenders Hub</a>
+      <a href="index.html">Calculators</a>
+      <a href="../tools/index.html">Vehicle &amp; Licence Checks</a>
+      <a href="../compare/index.html">Compare</a>
+      <a href="../news/index.html">News</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="../compare/index.html" class="btn btn-light btn-sm">Compare lenders</a>
+      <a href="index.html" class="btn btn-primary btn-sm">All calculators</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Calculators</a> <span>/</span> <span>Early Settlement Estimator</span></div>
+    <div class="eyebrow">Calculator</div>
+    <h1>Early settlement estimator</h1>
+    <p class="lede">Thinking about paying off your van finance early, part-exchanging, or selling the van? Get a rough idea of the payoff figure first.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="calc-shell">
+      <form class="calc-form" id="settle-calc-form">
+        <div class="field">
+          <label for="settle-loan">Original amount borrowed</label>
+          <div class="input-prefix-wrap"><span class="prefix">£</span><input class="input" type="number" id="settle-loan" value="16000" min="0" step="100"></div>
+        </div>
+        <div class="field">
+          <label for="settle-apr">Representative APR</label>
+          <input class="input" type="number" id="settle-apr" value="10.9" min="0" max="40" step="0.1">
+        </div>
+        <div class="field">
+          <label for="settle-term">Original term (months)</label>
+          <input class="input" type="number" id="settle-term" value="48" min="1" max="96" step="1">
+        </div>
+        <div class="field">
+          <label for="settle-paid">Payments already made</label>
+          <input class="input" type="number" id="settle-paid" value="18" min="0" max="96" step="1">
+        </div>
+        <p class="hint">This estimates the remaining capital balance on a standard declining-balance agreement — your lender's actual settlement figure may include a small early settlement rebate or admin fee.</p>
+      </form>
+      <div class="calc-result">
+        <span style="color:rgba(255,255,255,.65);font-size:.85rem;">Estimated remaining balance</span>
+        <div class="big-number" id="settle-balance">£11,420</div>
+        <div class="result-line"><span>Likely settlement range</span><span id="settle-range">£11,080 – £11,420</span></div>
+        <div class="result-line"><span>Payments made</span><span id="settle-paid-count">18 of 48 payments</span></div>
+        <a href="../lenders/index.html" class="btn btn-light btn-block mt-24">Find your lender's contact details</a>
+      </div>
+    </div>
+
+    <div class="disclaimer mt-32">
+      This is an estimate based on a standard amortising loan, not a binding figure. Under the UK Consumer Credit (Early Settlement) Regulations 2004, lenders calculate your exact statutory settlement figure — which may include a modest interest rebate and is capped in terms of any early settlement charge. Always request an official settlement statement from your finance company before making a payment.
+    </div>
+
+    <div class="grid grid-2 mt-48">
+      <div>
+        <h3>When does early settlement make sense?</h3>
+        <p>Common reasons include selling the van before the agreement ends, refinancing onto a cheaper rate, or simply wanting to be debt-free sooner. Because interest is front-loaded on most agreements, settling early in the term saves proportionally more interest than settling near the end.</p>
+      </div>
+      <div>
+        <h3>Selling a van still on finance</h3>
+        <p>You cannot legally sell a vehicle that's still subject to an HP or PCP agreement until it's settled, because the finance company retains an interest in the vehicle. Always run an <a href="../tools/hpi-check.html" style="color:var(--indigo-600);font-weight:600;">HPI/finance check</a> before buying a used van, to confirm it isn't still on someone else's agreement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../js/main.js"></script>
+<script>
+document.write(`
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="../index.html" class="brand" style="margin-bottom:14px;"><span class="brand-mark">VF</span><span>My VanFinance</span></a>
+        <p style="font-size:.85rem;">Independent UK van finance comparison, calculators and vehicle-check tools.</p></div>
+      <div><h4>Lenders</h4><ul><li><a href="../lenders/index.html">Lenders Hub</a></li><li><a href="../lenders/moneybarn.html">Moneybarn</a></li><li><a href="../lenders/zuto.html">Zuto</a></li></ul></div>
+      <div><h4>Tools</h4><ul><li><a href="index.html">Calculators</a></li><li><a href="../tools/vin-check.html">VIN Check</a></li><li><a href="../compare/index.html">Compare</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="../about.html">About Us</a></li><li><a href="../news/index.html">News</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="../about.html#disclaimer">Disclaimer</a></li><li><a href="../about.html#privacy">Privacy</a></li></ul></div>
+    </div>
+    <p class="footer-legal">My VanFinance is an independent comparison and information website. My VanFinance is not a lender. Calculator outputs are illustrative estimates only.</p>
+    <div class="footer-bottom"><span>© <span data-year></span> My VanFinance. All rights reserved.</span><span>my-vanfinance.co.uk</span></div>
+  </div>
+</footer>
+`);
+</script>
+</body>
+</html>
