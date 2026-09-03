@@ -17,17 +17,28 @@
       <span>My VanFinance<small>UK Van Finance Hub</small></span>
     </a>
     <nav class="main-nav">
-      <a href="lenders/index.html">Lenders Hub</a>
-      <a href="calculators/index.html">Calculators</a>
-      <a href="tools/index.html">Vehicle &amp; Licence Checks</a>
-      <a href="compare/index.html">Compare</a>
-      <a href="audience/index.html">Who It's For</a>
+      <details class="nav-dropdown">
+        <summary>Lenders</summary>
+        <div class="dropdown-menu">
+          <a href="lenders/index.html">Lenders Hub</a>
+          <a href="compare/index.html">Compare</a>
+        </div>
+      </details>
+      <details class="nav-dropdown">
+        <summary>Tools</summary>
+        <div class="dropdown-menu">
+          <a href="calculators/index.html">Calculators</a>
+          <a href="tools/index.html">Vehicle &amp; Licence Checks</a>
+        </div>
+      </details>
+      <a href="audience/index.html">Categories</a>
       <a href="news/index.html">News</a>
+      <a href="blog/index.html">Blog</a>
       <a href="about.html">About</a>
     </nav>
     <div class="nav-cta">
       <a href="compare/index.html" class="btn btn-light btn-sm">Compare lenders</a>
-      <a href="calculators/index.html" class="btn btn-primary btn-sm">Get a quote estimate</a>
+      <a href="calculators/index.html" class="btn btn-primary btn-sm">Try the calculators</a>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </div>
   </div>
@@ -269,13 +280,13 @@
       <a href="news/index.html" class="btn btn-dark">All articles →</a>
     </div>
     <div class="grid grid-3">
-      <a href="news/hp-vs-pcp-vans.html" class="card card-hover news-card">
+      <a href="blog/hp-vs-pcp-vans.html" class="card card-hover news-card">
         <div class="news-thumb">HP vs PCP</div>
         <div class="news-meta"><span>Guides</span><span>·</span><span>7 min read</span></div>
         <h4>HP vs PCP for Vans: Which Is Cheaper in 2026?</h4>
         <p style="font-size:.88rem;">We break down the real cost difference for a typical £20,000 panel van.</p>
       </a>
-      <a href="news/self-employed-van-finance.html" class="card card-hover news-card">
+      <a href="blog/self-employed-van-finance.html" class="card card-hover news-card">
         <div class="news-thumb">Self-Employed</div>
         <div class="news-meta"><span>Guides</span><span>·</span><span>6 min read</span></div>
         <h4>Van Finance for the Self-Employed: What Lenders Ask For</h4>
@@ -318,6 +329,7 @@ document.write(`
       <div><h4>Company</h4><ul>
         <li><a href="about.html">About Us</a></li>
         <li><a href="news/index.html">News</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul></div>
       <div><h4>Legal</h4><ul>
@@ -326,7 +338,7 @@ document.write(`
         <li><a href="about.html#cookies">Cookies</a></li>
       </ul></div>
     </div>
-    <p class="footer-legal">My VanFinance is an independent comparison and information website covering van finance in the United Kingdom. My VanFinance is not a lender and does not provide regulated financial advice; it is intended to operate as a credit broker referring users to its panel of FCA-authorised lenders. Figures shown in calculators and example quotes are illustrative estimates, not offers, and your actual rate will depend on your circumstances and the lender's own assessment. Ratings and reviews shown across this site are sample/placeholder data for design purposes and should be connected to a live reviews feed (e.g. Trustpilot, Google, Feefo) before launch. My VanFinance Ltd — company number and FCA reference to be added on incorporation/authorisation.</p>
+    <p class="footer-legal">My VanFinance is an independent comparison and information website covering van finance in the United Kingdom. My VanFinance is not a lender and does not provide regulated financial advice. We are a comparison and information site only — we don't broker, arrange or take applications for finance, and links to lenders go directly to their own websites. Figures shown in calculators and example quotes are illustrative estimates, not offers, and your actual rate will depend on your circumstances and the lender's own assessment. Ratings and reviews shown across this site are sample/placeholder data for design purposes and should be connected to a live reviews feed (e.g. Trustpilot, Google, Feefo) before launch. </p>
     <div class="footer-bottom">
       <span>© <span data-year></span> My VanFinance. All rights reserved.</span>
       <span>my-vanfinance.co.uk</span>

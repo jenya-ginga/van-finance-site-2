@@ -6,6 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   initNavToggle();
+  initNavDropdowns();
   initYear();
   initHPCalculator();
   initAffordabilityCalculator();
@@ -15,6 +16,28 @@ document.addEventListener('DOMContentLoaded', function () {
   initLicenceCheck();
   initFilterChips();
 });
+
+/* ---------- Nav dropdowns (Lenders / Tools) ---------- */
+function initNavDropdowns () {
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  if (!dropdowns.length) return;
+
+  dropdowns.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) {
+        dropdowns.forEach(function (other) {
+          if (other !== d) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    dropdowns.forEach(function (d) {
+      if (d.open && !d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+}
 
 /* ---------- Mobile nav ---------- */
 function initNavToggle () {
