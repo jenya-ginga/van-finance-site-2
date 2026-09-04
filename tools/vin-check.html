@@ -78,6 +78,22 @@
         <div class="disclaimer mt-24">This format checker runs entirely in your browser — no VIN you enter here is stored or transmitted anywhere.</div>
       </div>
     </div>
+
+    <div class="card mt-32" id="reg-check-card">
+      <h3>Free tax &amp; MOT status check (real DVLA data)</h3>
+      <p style="font-size:.92rem;">Enter a UK number plate to pull live tax and MOT status straight from the DVLA — no VIN needed for this one.</p>
+      <div class="grid grid-2" style="align-items:flex-start;gap:24px;margin-top:16px;">
+        <form id="reg-check-form">
+          <div class="field">
+            <label for="reg-input">Registration number</label>
+            <input class="input" id="reg-input" type="text" maxlength="8" placeholder="e.g. AB12CDE" style="text-transform:uppercase;letter-spacing:.05em;">
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Check tax &amp; MOT</button>
+        </form>
+        <div id="reg-result" style="font-size:.9rem;"></div>
+      </div>
+      <p class="hint mt-16">Data comes directly from the DVLA Vehicle Enquiry Service. My VanFinance doesn't store the registration numbers you look up here.</p>
+    </div>
   </div>
 </section>
 

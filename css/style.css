@@ -186,6 +186,8 @@ button{ font-family:inherit; }
 .hero-stats{ display:flex; gap:28px; margin-top:34px; flex-wrap:wrap; }
 .hero-stat b{ display:block; font-family:'Montserrat',sans-serif; font-size:1.6rem; color:#fff; }
 .hero-stat span{ font-size:.8rem; color:rgba(255,255,255,.6); }
+.stat-tile{ display:inline-block; background:var(--bg-alt); border:1px solid var(--line); border-radius:12px; padding:10px 18px; }
+.stat-tile b{ color:var(--ink); }
 .hero-cta-row{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
 
 .hero-panel{

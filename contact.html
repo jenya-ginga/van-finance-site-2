@@ -60,18 +60,24 @@
   <div class="container">
     <div class="grid grid-2" style="align-items:start;">
       <div class="card">
-        <form onsubmit="event.preventDefault(); this.querySelector('[data-confirm]').style.display='block'; this.querySelector('button[type=submit]').style.display='none';">
+        <!--
+          Wired to Formspree (https://formspree.io) — a free service that
+          forwards form submissions straight to an inbox with no backend
+          server required. Replace YOUR_FORM_ID below with your own
+          Formspree form ID (see /README-BACKEND.md for the 2-minute setup).
+        -->
+        <form id="contact-form" data-endpoint="https://formspree.io/f/YOUR_FORM_ID">
           <div class="field">
             <label for="c-name">Full name</label>
-            <input class="input" id="c-name" type="text" required>
+            <input class="input" id="c-name" name="name" type="text" required>
           </div>
           <div class="field">
             <label for="c-email">Email address</label>
-            <input class="input" id="c-email" type="email" required>
+            <input class="input" id="c-email" name="email" type="email" required>
           </div>
           <div class="field">
             <label for="c-topic">Topic</label>
-            <select class="input" id="c-topic">
+            <select class="input" id="c-topic" name="topic">
               <option>General enquiry</option>
               <option>Report an outdated lender rate</option>
               <option>Request a lender be added</option>
@@ -81,10 +87,12 @@
           </div>
           <div class="field">
             <label for="c-message">Message</label>
-            <textarea class="input" id="c-message" rows="5" required></textarea>
+            <textarea class="input" id="c-message" name="message" rows="5" required></textarea>
           </div>
           <button class="btn btn-primary btn-block" type="submit">Send message</button>
-          <p data-confirm style="display:none;margin-top:16px;" class="tag tag-green">Thanks — this demo form doesn't send yet. Connect it to your inbox or CRM before launch.</p>
+          <p data-confirm-ok style="display:none;margin-top:16px;" class="tag tag-green">Thanks — your message has been sent. We'll get back to you soon.</p>
+          <p data-confirm-err style="display:none;margin-top:16px;" class="tag tag-coral">Something went wrong sending your message — please email us directly instead (see right).</p>
+          <p data-confirm-setup style="display:none;margin-top:16px;" class="tag tag-amber">This form isn't connected to an inbox yet — set up a free Formspree endpoint (see README-BACKEND.md) and it'll work immediately.</p>
         </form>
       </div>
 

@@ -15,7 +15,129 @@ document.addEventListener('DOMContentLoaded', function () {
   initVinCheck();
   initLicenceCheck();
   initFilterChips();
+  initContactForm();
+  initRegCheck();
+  initBaseRateWidgets();
 });
+
+/* ---------- Registration check (DVLA, via /api/vehicle-check) ---------- */
+function initRegCheck () {
+  var form = document.getElementById('reg-check-form');
+  var result = document.getElementById('reg-result');
+  if (!form || !result) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var reg = document.getElementById('reg-input').value.trim();
+    if (!reg) return;
+
+    result.innerHTML = '<p class="hint">Checking…</p>';
+
+    fetch('/api/vehicle-check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ registrationNumber: reg })
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, status: res.status, data: data }; }); })
+      .then(function (r) {
+        if (r.data && r.data.notConfigured) {
+          result.innerHTML =
+            '<p class="tag tag-amber" style="display:inline-block;margin-bottom:10px;">Not set up yet</p>' +
+            '<p style="font-size:.88rem;">This check needs a free DVLA API key added to the site\'s hosting — see <code>api/vehicle-check.js</code> for the two-step setup.</p>';
+          return;
+        }
+        if (!r.ok) {
+          result.innerHTML = '<p class="tag tag-coral" style="display:inline-block;margin-bottom:10px;">' + (r.data.error || 'Could not check that registration.') + '</p>';
+          return;
+        }
+        var d = r.data;
+        var taxOk = (d.taxStatus || '').toLowerCase() === 'taxed';
+        var motOk = (d.motStatus || '').toLowerCase() === 'valid';
+        result.innerHTML =
+          '<div class="table-wrap"><table>' +
+          '<tr><td>Make</td><td><b>' + (d.make || '—') + '</b></td></tr>' +
+          '<tr><td>Colour</td><td>' + (d.colour || '—') + '</td></tr>' +
+          '<tr><td>Year of manufacture</td><td>' + (d.yearOfManufacture || '—') + '</td></tr>' +
+          '<tr><td>Fuel type</td><td>' + (d.fuelType || '—') + '</td></tr>' +
+          '<tr><td>Tax status</td><td><span class="tag ' + (taxOk ? 'tag-green' : 'tag-coral') + '">' + (d.taxStatus || 'Unknown') + '</span>' + (d.taxDueDate ? ' · due ' + d.taxDueDate : '') + '</td></tr>' +
+          '<tr><td>MOT status</td><td><span class="tag ' + (motOk ? 'tag-green' : 'tag-coral') + '">' + (d.motStatus || 'Unknown') + '</span>' + (d.motExpiryDate ? ' · expires ' + d.motExpiryDate : '') + '</td></tr>' +
+          '</table></div>';
+      })
+      .catch(function () {
+        result.innerHTML = '<p class="tag tag-coral" style="display:inline-block;">Could not reach the check right now — try again shortly.</p>';
+      });
+  });
+}
+
+/* ---------- Bank of England base rate widget(s) ---------- */
+function initBaseRateWidgets () {
+  var widgets = document.querySelectorAll('[data-base-rate-widget]');
+  if (!widgets.length) return;
+
+  fetch('/api/base-rate')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (!data || typeof data.rate !== 'number') throw new Error('bad payload');
+      widgets.forEach(function (w) {
+        w.innerHTML =
+          '<div class="stat-tile"><b style="font-family:\'Montserrat\',sans-serif;font-size:1.6rem;">' + data.rate + '%</b>' +
+          '<div style="font-size:.8rem;color:var(--ink-soft);">BoE Bank Rate · updated ' + data.date + '</div></div>';
+      });
+    })
+    .catch(function () {
+      widgets.forEach(function (w) { w.style.display = 'none'; });
+    });
+}
+
+/* ---------- Contact form (Formspree) ---------- */
+function initContactForm () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var endpoint = form.getAttribute('data-endpoint') || '';
+  var okMsg = form.querySelector('[data-confirm-ok]');
+  var errMsg = form.querySelector('[data-confirm-err]');
+  var setupMsg = form.querySelector('[data-confirm-setup]');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  function hideAll () {
+    [okMsg, errMsg, setupMsg].forEach(function (el) { if (el) el.style.display = 'none'; });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hideAll();
+
+    if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+      // No real endpoint configured yet — tell the site owner, not the visitor.
+      if (setupMsg) setupMsg.style.display = 'block';
+      return;
+    }
+
+    var data = new FormData(form);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch(endpoint, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (res.ok) {
+        form.reset();
+        if (okMsg) okMsg.style.display = 'block';
+        if (submitBtn) submitBtn.style.display = 'none';
+      } else {
+        if (errMsg) errMsg.style.display = 'block';
+      }
+    }).catch(function () {
+      if (errMsg) errMsg.style.display = 'block';
+    }).finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    });
+  });
+}
 
 /* ---------- Nav dropdowns (Lenders / Tools) ---------- */
 function initNavDropdowns () {
