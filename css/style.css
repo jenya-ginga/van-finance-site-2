@@ -4,7 +4,7 @@
    confident type, generous whitespace.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root{
   /* Brand palette */
@@ -60,7 +60,7 @@ body{
   line-height:1.5;
 }
 h1,h2,h3,h4,.font-display{
-  font-family:'Space Grotesk','Inter',sans-serif;
+  font-family:'Montserrat','Inter',sans-serif;
   font-weight:700;
   line-height:1.12;
   letter-spacing:-0.02em;
@@ -130,7 +130,7 @@ button{ font-family:inherit; }
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:24px; }
-.brand{ display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.15rem; color:#fff; flex-shrink:0; }
+.brand{ display:flex; align-items:center; gap:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:1.15rem; color:#fff; flex-shrink:0; }
 .brand-mark{
   width:36px; height:36px; border-radius:10px; background:var(--grad-brand);
   display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem;
@@ -184,7 +184,7 @@ button{ font-family:inherit; }
 .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
 @media (max-width: 900px){ .hero-grid{ grid-template-columns:1fr; } }
 .hero-stats{ display:flex; gap:28px; margin-top:34px; flex-wrap:wrap; }
-.hero-stat b{ display:block; font-family:'Space Grotesk',sans-serif; font-size:1.6rem; color:#fff; }
+.hero-stat b{ display:block; font-family:'Montserrat',sans-serif; font-size:1.6rem; color:#fff; }
 .hero-stat span{ font-size:.8rem; color:rgba(255,255,255,.6); }
 .hero-cta-row{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
 
@@ -196,7 +196,7 @@ button{ font-family:inherit; }
 .hero-panel-row{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px dashed rgba(255,255,255,.16); }
 .hero-panel-row:last-child{ border-bottom:none; }
 .hero-panel-row span{ color:rgba(255,255,255,.6); font-size:.85rem; }
-.hero-panel-row b{ color:#fff; font-family:'Space Grotesk',sans-serif; }
+.hero-panel-row b{ color:#fff; font-family:'Montserrat',sans-serif; }
 
 /* ---------- Cards ---------- */
 .card{
@@ -232,7 +232,7 @@ button{ font-family:inherit; }
 .stars.small{ font-size:.8rem; }
 .rating-badge{
   display:inline-flex; align-items:center; gap:8px; background:var(--navy-900); color:#fff;
-  padding:8px 14px; border-radius:12px; font-weight:700; font-family:'Space Grotesk',sans-serif;
+  padding:8px 14px; border-radius:12px; font-weight:700; font-family:'Montserrat',sans-serif;
 }
 .rating-badge span{ font-size:.7rem; font-weight:600; color:rgba(255,255,255,.6); }
 .rating-bar-track{ height:8px; background:var(--line-soft); border-radius:99px; overflow:hidden; flex:1; }
@@ -242,9 +242,9 @@ button{ font-family:inherit; }
 .table-wrap{ overflow-x:auto; border-radius:var(--radius-lg); border:1px solid var(--line); background:#fff; }
 table{ width:100%; border-collapse:collapse; min-width:640px; }
 th,td{ padding:16px 18px; text-align:left; border-bottom:1px solid var(--line-soft); font-size:.92rem; }
-th{ background:var(--bg-alt); font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--ink); font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; }
+th{ background:var(--bg-alt); font-family:'Montserrat',sans-serif; font-weight:600; color:var(--ink); font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; }
 tr:last-child td{ border-bottom:none; }
-td b{ font-family:'Space Grotesk',sans-serif; }
+td b{ font-family:'Montserrat',sans-serif; }
 
 /* ---------- Forms / Calculators ---------- */
 .field{ margin-bottom:18px; }
@@ -265,11 +265,11 @@ input[type="range"]{ width:100%; accent-color:var(--indigo-500); }
 .calc-form{ background:#fff; padding:40px; }
 .calc-result{ background:var(--grad-hero); color:#fff; padding:40px; display:flex; flex-direction:column; justify-content:center; }
 @media (max-width:860px){ .calc-shell{ grid-template-columns:1fr; } }
-.calc-result .big-number{ font-family:'Space Grotesk',sans-serif; font-size:2.6rem; font-weight:700; margin:6px 0 2px; }
+.calc-result .big-number{ font-family:'Montserrat',sans-serif; font-size:2.6rem; font-weight:700; margin:6px 0 2px; }
 .calc-result .result-line{ display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px dashed rgba(255,255,255,.18); font-size:.92rem; }
 .calc-result .result-line:last-of-type{ border-bottom:none; }
 .calc-result .result-line span:first-child{ color:rgba(255,255,255,.65); }
-.calc-result .result-line span:last-child{ font-weight:700; font-family:'Space Grotesk',sans-serif; }
+.calc-result .result-line span:last-child{ font-weight:700; font-family:'Montserrat',sans-serif; }
 
 .disclaimer{
   font-size:.78rem; color:var(--muted-2); background:var(--bg-alt); border:1px dashed var(--line);
@@ -283,7 +283,7 @@ input[type="range"]{ width:100%; accent-color:var(--indigo-500); }
 .step{ position:relative; padding-top:8px; }
 .step-num{
   width:40px; height:40px; border-radius:12px; background:var(--navy-900); color:var(--lime-400);
-  display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700;
+  display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:700;
   margin-bottom:14px;
 }
 
@@ -292,7 +292,7 @@ input[type="range"]{ width:100%; accent-color:var(--indigo-500); }
 .lender-card-top{ display:flex; align-items:center; gap:14px; }
 .lender-logo{
   width:52px; height:52px; border-radius:14px; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;
-  font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--indigo-600); flex-shrink:0; font-size:1rem;
+  font-family:'Montserrat',sans-serif; font-weight:700; color:var(--indigo-600); flex-shrink:0; font-size:1rem;
 }
 .lender-meta{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:.82rem; color:var(--muted); }
 .lender-pros-cons{ display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:.85rem; }
@@ -303,13 +303,13 @@ input[type="range"]{ width:100%; accent-color:var(--indigo-500); }
 
 /* ---------- News ---------- */
 .news-card img,.news-thumb{ border-radius:var(--radius); margin-bottom:16px; aspect-ratio:16/10; object-fit:cover; }
-.news-thumb{ width:100%; display:flex; align-items:center; justify-content:center; background:var(--grad-brand); color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.85rem; text-align:center; padding:16px; }
+.news-thumb{ width:100%; display:flex; align-items:center; justify-content:center; background:var(--grad-brand); color:#fff; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.85rem; text-align:center; padding:16px; }
 .news-meta{ font-size:.78rem; color:var(--muted-2); display:flex; gap:10px; align-items:center; margin-bottom:8px; }
 
 /* ---------- Review ---------- */
 .review-card{ border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:#fff; }
 .review-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-.review-name{ font-weight:700; font-family:'Space Grotesk',sans-serif; }
+.review-name{ font-weight:700; font-family:'Montserrat',sans-serif; }
 .review-date{ font-size:.75rem; color:var(--muted-2); }
 
 /* ---------- CTA band ---------- */
